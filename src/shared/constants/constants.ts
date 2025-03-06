@@ -1,4 +1,4 @@
-import { FilterComplexity, FilterRate } from '@/features/filters/model/types';
+import { FilterComplexity, FilterRate } from '@/entities/filters/model/types';
 
 export const TOTAL_PAGES = 10;
 

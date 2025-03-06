@@ -1,11 +1,11 @@
 import styles from './styles.module.css';
 import { useAppDispatch, useAppSelector } from '@/app/appStore';
 
-import { setFilters } from '@/features/filters/model/FiltersSlice';
+import { setFilters } from '@/entities/filters/model/FiltersSlice';
 import { setFiltersQuestions } from '@/entities/questions/model/questionsSlice';
 
-import ProfessionalFilters from '@/features/filters/ui/ProfessionalFilters/ProfessionalFilters';
-import { ISkills, ISpecializations } from '@/features/filters/model/types';
+import ProfessionalFilters from '@/entities/filters/ui/ProfessionalFilters/ProfessionalFilters';
+import { ISkills, ISpecializations } from '@/entities/filters/model/types';
 
 interface Props {
   specializations: ISpecializations[];

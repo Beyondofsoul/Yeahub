@@ -2,11 +2,12 @@ import { useGetQuestionsQuery } from '@/entities/questions/api/questionsApi';
 import styles from './styles.module.css';
 
 import { useAppSelector } from '@/app/appStore';
-import { Pagination } from '@/features/pagination/ui/Pagination';
+
 import { usePaginationNews } from '../../utils/hooks/usePaginationNews';
 
 import { QuestionsList } from '@/widgets/questions';
 import { useDebounce } from '@/shared/hooks/useDebounce';
+import { Pagination } from '@/shared/ui/pagination/ui/Pagination';
 
 function AllQuestions() {
   const filters = useAppSelector((state) => state.questions.filters);

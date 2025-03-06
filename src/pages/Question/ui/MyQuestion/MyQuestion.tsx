@@ -1,13 +1,12 @@
-import { QuestionCard, QuestionFilters } from '@/entities/question';
-import { useGetQuestionByIdQuery } from '@/entities/question/api/questionApi';
 import styles from './styles.module.css';
 import { Link, useParams } from 'react-router-dom';
 import shev from '@/shared/assets/Chevrone_Down.svg';
+import { useGetQuestionByIdQuery } from '@/entities/questions/api/questionsApi';
+import { QuestionCard, QuestionInfo } from '@/entities/questions';
 
 function MyQuestion() {
   const { questionId } = useParams();
   const { data, isLoading } = useGetQuestionByIdQuery(questionId);
-  console.log(data);
 
   if (isLoading) {
     return <div className="">loading</div>;
@@ -20,7 +19,7 @@ function MyQuestion() {
       </Link>
       <div className={styles.question}>
         <QuestionCard question={data} />
-        <QuestionFilters question={data} skills={data.questionSkills} keywords={data.keywords} />
+        <QuestionInfo question={data} skills={data.questionSkills} keywords={data.keywords} />
       </div>
     </>
   );

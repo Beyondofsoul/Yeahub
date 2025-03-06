@@ -2,10 +2,13 @@ import { IQuestions } from '@/shared/interfaces';
 import styles from './styles.module.css';
 import arrow from '@/shared/assets/Arrow Right.svg';
 import { Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 interface Props {
   question: IQuestions;
 }
 function QuestionContent({ question }: Props) {
+  const cleanShortAnswer = DOMPurify.sanitize(question.shortAnswer);
+
   return (
     <div className={styles.content}>
       <div className={styles.top}>
@@ -20,7 +23,7 @@ function QuestionContent({ question }: Props) {
       </div>
 
       <div className={styles.bottom}>
-        <div className={styles.extra} dangerouslySetInnerHTML={{ __html: question.shortAnswer }} />
+        <div className={styles.extra} dangerouslySetInnerHTML={{ __html: cleanShortAnswer }} />
         <div className={styles.more}>
           <Link to={`${question.id}`} className={styles.link}>
             Подробнее

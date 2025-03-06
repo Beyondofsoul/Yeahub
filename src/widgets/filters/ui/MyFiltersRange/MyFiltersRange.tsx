@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { useAppDispatch, useAppSelector } from '@/app/appStore';
 
-import { RangeFilter } from '@/features/filters';
+import { RangeFilter } from '@/entities/filters';
 
 import { setFilterComplexity, setFilterRate } from '@/entities/questions/model/questionsSlice';
 import { DIFFICULTY_ITEMS, RATING_ITEMS } from '@/shared/constants/constants';
