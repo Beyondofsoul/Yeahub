@@ -1,0 +1,14 @@
+.question {
+  display: flex;
+  gap: 20px;
+}
+.shev {
+  transform: rotate(-90deg);
+}
+.link {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  font-weight: 500;
+  color: #6a0bff;
+}

@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+.arrow {
+  display: flex;
+  border-radius: 23px;
+  border: 1px solid #6a0bff;
+  cursor: pointer;
+  padding: 4px;
+}
+.arrow:hover {
+  background-color: white;
+  transition: 0.3s;
+}
+.pageNumber {
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  color: #474747;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+.active {
+  border-radius: 2px;
+  padding: 2px 6px;
+  color: white;
+  font-weight: 600;
+  background-color: #6a0bff;
+}
