@@ -8,7 +8,7 @@ interface Props {
   skills: ISkill[];
 }
 
-function QuestionFilters({ question, keywords, skills }: Props) {
+function QuestionInfo({ question, keywords, skills }: Props) {
   return (
     <div className={styles.filters}>
       <p className={styles.rangeTitle}>Уровень:</p>
@@ -42,4 +42,4 @@ function QuestionFilters({ question, keywords, skills }: Props) {
     </div>
   );
 }
-export default QuestionFilters;
+export default QuestionInfo;

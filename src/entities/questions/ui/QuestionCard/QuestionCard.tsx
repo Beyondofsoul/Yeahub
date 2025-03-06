@@ -3,7 +3,7 @@ import { IQuestion } from '../../model/types';
 import styles from './styles.module.css';
 import { useState } from 'react';
 import shev from '@/shared/assets/Chevrone_Down.svg';
-
+import DOMPurify from 'dompurify';
 interface Props {
   question: IQuestion;
 }
@@ -14,6 +14,10 @@ function QuestionCard({ question }: Props) {
   const toggleContent = () => {
     setIsOpen(!isOpen);
   };
+
+  const cleanShortAnswer = DOMPurify.sanitize(question.shortAnswer);
+
+  const cleanlongAnswer = DOMPurify.sanitize(question.longAnswer);
   return (
     <div className={styles.card}>
       <div className={styles.top}>
@@ -24,14 +28,14 @@ function QuestionCard({ question }: Props) {
         <h4 className={styles.answerTitle}>Краткий ответ</h4>
         <div
           className={styles.shortAnswer}
-          dangerouslySetInnerHTML={{ __html: question.shortAnswer }}
+          dangerouslySetInnerHTML={{ __html: cleanShortAnswer }}
         />
       </div>
       <div className={styles.long}>
         <h4 className={styles.answerTitle}>Развернутый ответ</h4>
         <div
           className={`${styles.prevAnswer} ${isOpen ? styles.open : ''}`}
-          dangerouslySetInnerHTML={{ __html: question.longAnswer.substring(0, MAX_PREWIEW_LENGTH) }}
+          dangerouslySetInnerHTML={{ __html: cleanlongAnswer.substring(0, MAX_PREWIEW_LENGTH) }}
         ></div>
         {isOpen && (
           <div

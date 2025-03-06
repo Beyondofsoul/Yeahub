@@ -1,10 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { baseApi } from '@/shared/api/baseApi';
 
-const BASE_URL = import.meta.env.VITE_YEAHUB_BASE_API_URL;
-
-export const filtersApi = createApi({
-  reducerPath: 'filtersApi',
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+const filtersApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getSpesializations: builder.query({
       query: (limit) => {
@@ -15,6 +11,7 @@ export const filtersApi = createApi({
           },
         };
       },
+      providesTags: ['Filters'],
     }),
     getSkills: builder.query({
       query: (limit) => {
@@ -25,8 +22,11 @@ export const filtersApi = createApi({
           },
         };
       },
+      providesTags: ['Filters'],
     }),
   }),
+  overrideExisting: false,
 });
 
 export const { useGetSpesializationsQuery, useGetSkillsQuery } = filtersApi;
+export default filtersApi;

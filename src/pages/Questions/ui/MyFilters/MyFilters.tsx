@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import { useAppDispatch, useAppSelector } from '@/app/appStore';
-import { useGetSpesializationsQuery, useGetSkillsQuery } from '@/features/filters/api/filtersApi';
-import { Search } from '@/features/filters';
+import { useGetSpesializationsQuery, useGetSkillsQuery } from '@/entities/filters/api/filtersApi';
+import { Search } from '@/entities/filters';
 
 import { MyFiltersProfessional, MyFiltersRange } from '@/widgets/filters';
 

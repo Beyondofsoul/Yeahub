@@ -1,11 +1,8 @@
 import { paramsType } from '@/shared/interfaces';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const BASE_URL = import.meta.env.VITE_YEAHUB_BASE_API_URL;
+import { baseApi } from '@/shared/api/baseApi';
 
-export const questionsApi = createApi({
-  reducerPath: 'questionsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+const questionsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getQuestions: builder.query({
       query: (params) => {
@@ -26,8 +23,22 @@ export const questionsApi = createApi({
           params: filteredParams,
         };
       },
+      providesTags: ['Questions'],
+    }),
+    getQuestionById: builder.query({
+      query: (id) => {
+        return {
+          url: `questions/public-questions/${id}`,
+          params: {
+            id: id,
+          },
+        };
+      },
+      providesTags: ['Questions'],
     }),
   }),
+  overrideExisting: false,
 });
 
-export const { useGetQuestionsQuery } = questionsApi;
+export const { useGetQuestionsQuery, useGetQuestionByIdQuery } = questionsApi;
+export default questionsApi;
