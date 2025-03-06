@@ -1,0 +1,66 @@
+.filters {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+  max-height: 360px;
+}
+.range {
+  display: flex;
+  gap: 16px;
+}
+.rangeTitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: #474747;
+}
+.complexity {
+  padding: 6px 10px;
+  margin: 8px;
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+.complexityInfo {
+  background-color: #6a0bff;
+  border-radius: 4px;
+  padding: 2px 4px;
+  color: #ffffff;
+}
+.complexityTitle {
+  font-weight: 600;
+  font-size: 14px;
+  color: #303030;
+}
+.skills {
+  margin-top: 24px;
+}
+.skillsTitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: #474747;
+}
+.imgSkill {
+  width: 20px;
+  height: 20px;
+}
+.active {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #6a0bff;
+}
+.keywords {
+  margin-top: 8px;
+}
+.link {
+  display: flex;
+  gap: 14px;
+
+  color: #6a0bff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}

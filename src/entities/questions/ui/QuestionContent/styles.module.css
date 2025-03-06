@@ -1,0 +1,79 @@
+.card {
+  position: relative;
+  margin-left: 16px;
+  border-bottom: 1px solid #d1d1d1;
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.card::marker {
+  color: #5533ff;
+  font-size: 20px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #191919;
+}
+.shev {
+  transition: transform 0.3s ease;
+}
+.content {
+  margin-top: 24px;
+  animation: fadeIn 0.3s ease;
+}
+.top {
+  display: flex;
+  gap: 40px;
+}
+.rate {
+  display: inline-flex;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  gap: 12px;
+}
+.rateTitle {
+  font-weight: 600;
+  font-size: 14px;
+  color: #303030;
+}
+.Num {
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #6a0bff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.extra {
+  margin-top: 24px;
+}
+.more {
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+  cursor: pointer;
+}
+.link {
+  font-weight: 600;
+  font-size: 16px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
