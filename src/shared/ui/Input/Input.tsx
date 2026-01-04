@@ -3,18 +3,19 @@ import styles from './styles.module.css';
 import search from '@/shared/assets/Magnifer.svg';
 
 interface Props {
-  onChange: (arg: ChangeEvent<HTMLInputElement>) => void;
-  value: string;
+  onChange?: (arg: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  placeholder?: string;
 }
 
-function Input({ onChange, value, ...props }: Props) {
+function Input({ onChange, value, placeholder, ...props }: Props) {
   return (
     <div className={styles.block}>
       <img src={search} alt="" />
       <input
         className={styles.input}
         {...props}
-        placeholder={` Введите запрос`}
+        placeholder={placeholder}
         onChange={onChange}
         value={value}
       />

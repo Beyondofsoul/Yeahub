@@ -12,7 +12,7 @@ function MyQuestion() {
     return <div className="">loading</div>;
   }
   return (
-    <>
+    <main>
       <Link to={'/'} className={styles.link}>
         <img src={shev} alt="shev" className={styles.shev} />
         Назад
@@ -21,7 +21,7 @@ function MyQuestion() {
         <QuestionCard question={data} />
         <QuestionInfo question={data} skills={data.questionSkills} keywords={data.keywords} />
       </div>
-    </>
+    </main>
   );
 }
 export default MyQuestion;

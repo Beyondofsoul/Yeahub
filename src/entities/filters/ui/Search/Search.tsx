@@ -5,6 +5,12 @@ interface Props {
 }
 
 function Search({ keywords, setKeywords }: Props) {
-  return <Input value={keywords} onChange={(e) => setKeywords(e.target.value)} />;
+  return (
+    <Input
+      value={keywords}
+      onChange={(e) => setKeywords(e.target.value)}
+      placeholder="Введите запрос"
+    />
+  );
 }
 export default Search;

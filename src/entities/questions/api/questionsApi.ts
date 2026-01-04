@@ -6,7 +6,15 @@ const questionsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getQuestions: builder.query({
       query: (params) => {
-        const { page = 1, specialization, skills, rate, complexity, title } = params || {};
+        const {
+          page = 1,
+          skillFilterMode = 'ANY',
+          specialization,
+          skills,
+          rate,
+          complexity,
+          title,
+        } = params || {};
 
         const isValidValue = (value: paramsType): boolean => {
           if (value === null || value === undefined) return false;
@@ -14,9 +22,15 @@ const questionsApi = baseApi.injectEndpoints({
           return true;
         };
         const filteredParams = Object.fromEntries(
-          Object.entries({ page, specialization, skills, rate, complexity, title }).filter(
-            ([_, value]) => isValidValue(value),
-          ),
+          Object.entries({
+            page,
+            specialization,
+            skills,
+            rate,
+            complexity,
+            title,
+            skillFilterMode,
+          }).filter(([_, value]) => isValidValue(value)),
         );
         return {
           url: 'questions/public-questions',
