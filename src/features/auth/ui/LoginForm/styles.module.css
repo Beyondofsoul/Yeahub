@@ -1,0 +1,12 @@
+.mainAuthForm {
+  padding-top: 30px;
+  display: grid;
+  gap: 8px;
+}
+.mainAuthFormSlot {
+  display: grid;
+  gap: 8px;
+}
+.mainAuthButton {
+  padding-top: 8px;
+}

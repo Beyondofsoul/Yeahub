@@ -5,11 +5,14 @@ import { appRouter } from './appRouter';
 import { RouterProvider } from 'react-router-dom';
 import { store } from './appStore';
 import { Provider } from 'react-redux';
+import { AuthProvider } from '@/pages/AuthPage';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={appRouter} />
+      <AuthProvider>
+        <RouterProvider router={appRouter} />
+      </AuthProvider>
     </Provider>
   </StrictMode>,
 );

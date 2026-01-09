@@ -1,16 +1,15 @@
 import clsx from 'clsx';
 import styles from './styles.module.css';
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children: ReactNode;
-  onClick?: () => void;
 }
 
-function Button({ className, children, onClick, ...props }: ButtonProps) {
+function Button({ className, children, onClick, type, ...props }: ButtonProps) {
   return (
-    <button className={clsx(styles.button, className)} {...props} onClick={onClick}>
+    <button className={clsx(styles.button, className)} {...props} onClick={onClick} type={type}>
       {children}
     </button>
   );

@@ -10,6 +10,7 @@ function Search({ keywords, setKeywords }: Props) {
       value={keywords}
       onChange={(e) => setKeywords(e.target.value)}
       placeholder="Введите запрос"
+      img={true}
     />
   );
 }

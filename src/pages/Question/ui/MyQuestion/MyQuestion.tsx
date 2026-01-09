@@ -13,7 +13,7 @@ function MyQuestion() {
   }
   return (
     <main>
-      <Link to={'/'} className={styles.link}>
+      <Link to={'/questions'} className={styles.link}>
         <img src={shev} alt="shev" className={styles.shev} />
         Назад
       </Link>

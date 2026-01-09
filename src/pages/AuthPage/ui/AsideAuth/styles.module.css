@@ -1,0 +1,54 @@
+.asideAuth {
+  background-color: #6a0bff;
+  width: 607px;
+  padding-left: 112px;
+  color: #ffffff;
+  height: 1012px;
+}
+.asideAuthHeader {
+  padding-top: 70px;
+}
+.asideAuthHeaderDescription {
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 8px;
+}
+
+/* .asideAuthFooterList li {
+  list-style-image: url('../../../../shared/assets/check-circle.svg');
+  list-style-position: outside;
+  margin-left: 12px;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+.asideAuthFooterList {
+  padding-top: 14px;
+} */
+
+.asideAuthFooterList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 14px;
+}
+
+.asideAuthFooterList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+}
+
+.asideAuthFooterList li::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: url('../../../../shared/assets/check-circle.svg') no-repeat center / contain;
+  flex-shrink: 0;
+}
+.asideAuthFooterTitle {
+  font-size: 24px;
+  font-weight: 500;
+  max-width: 328px;
+  padding-top: 427px;
+}
