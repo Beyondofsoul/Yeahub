@@ -41,7 +41,7 @@ function LoginForm() {
 
       reset();
 
-      window.location.href = '/questions';
+      window.location.href = '/admin';
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {

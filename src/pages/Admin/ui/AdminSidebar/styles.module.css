@@ -1,0 +1,32 @@
+.adminSidebar {
+  padding-top: 40px;
+  padding-left: 20px;
+
+  max-width: 280px;
+}
+.adminNavigation {
+  padding-bottom: 90px;
+}
+.adminNavigationItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 44px;
+  border-radius: 12px;
+}
+.adminNavigationItem.active {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #6a0bff;
+  background-color: #f8f8f8;
+  height: 44px;
+  border-radius: 12px;
+}
+.label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.button {
+  width: 240px;
+}

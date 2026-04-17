@@ -1,9 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import BaseLayout from './layouts/BaseLayout';
 import { QuestionsPage } from '@/pages/Questions';
 import Question from '@/pages/Question/ui/Page';
 import AuthPage from '@/pages/AuthPage/ui/Page';
 import { ProtectedRouteAuth } from '@/pages/AuthPage';
+
+import { SpecializationsPage } from '@/pages/Admin/ui/specialization/ui/SpecializationsPage/SpecializationsPage';
+import AdminLayout from './layouts/AdminLayout/AdminLayout';
 
 export const appRouter = createBrowserRouter([
   {
@@ -25,6 +28,18 @@ export const appRouter = createBrowserRouter([
             <Question />
           </ProtectedRouteAuth>
         ),
+      },
+      {
+        path: '/admin',
+        element: (
+          <ProtectedRouteAuth>
+            <AdminLayout />
+          </ProtectedRouteAuth>
+        ),
+        children: [
+          { index: true, element: <Navigate to="/admin/specializations" replace /> },
+          { path: 'specializations', element: <SpecializationsPage /> },
+        ],
       },
     ],
   },
